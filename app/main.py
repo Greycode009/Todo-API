@@ -11,7 +11,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 app = FastAPI(title="Todo API", version="1.0.0")
 
-# app.include_router(todo_router)
+app.include_router(todo_router)
 
 @app.get("/")
 async def root(db: AsyncSession = Depends(get_db)):
